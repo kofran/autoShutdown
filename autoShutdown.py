@@ -13,7 +13,8 @@
 ##See the License for the specific language governing permissions and
 ##limitations under the License.
 
-##Script para programar el apagado, en minutos, hs o dias
+## autoShutdown is a script to program the computer power of for Windows and Linux.
+
 def licencia():
     print '''
 
@@ -37,7 +38,7 @@ def apagar(t):
     import os
     sisop = os.name
     if sisop == 'nt':
-        comando = 'shutdown -s -t ' + str(t) #para concatenar converti t a string
+        comando = 'shutdown -s -t ' + str(t) 
         os.system(comando)
         print '''exito! si quieres cancelar el apagado automatico
         escriba cancelar, sino presione enter para salir'''
