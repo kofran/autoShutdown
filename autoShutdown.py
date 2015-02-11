@@ -13,7 +13,8 @@
 ##See the License for the specific language governing permissions and
 ##limitations under the License.
 
-## autoShutdown is a script to program the computer power of for Windows and Linux.
+'''autoShutdown is a script to program the computer power-off
+for Windows and Linux.'''
 
 def licencia():
     print '''
@@ -50,7 +51,7 @@ def apagar(t):
         else:
             exit()
     elif sisop == 'posix':
-        #t esta en segundos lo debo convertir a minutos
+        
         t = t / 60
         print '''Atencion:
         Si cierra esta ventana o presiona Control + C
@@ -58,11 +59,11 @@ def apagar(t):
 	A continuacion se le pedira ingresar su clave sudo
         Presione Enter(intro) para continuar...'''
         raw_input()
-        comando = 'sudo shutdown -h +' + str(t) #para concatenar converti t a string
+        comando = 'sudo shutdown -h +' + str(t) 
         os.system(comando)
 
 def limpiar():
-    ##Limpiar terminal
+    # Clean terminal for windows and linux.
     import os
     sisop = os.name
     if sisop == 'nt':
@@ -76,7 +77,7 @@ Apagado automatico version 1, para Linux, Windows
 Requiere Python 2.7
 '''
 
-##Bucle para el menu
+# Menu.
 flag = 0
 
 while flag == 0:
