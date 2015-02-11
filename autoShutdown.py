@@ -52,10 +52,10 @@ def apagar(t):
             exit()
     elif sisop == 'posix':
         
-        t = t / 60
+        t = t / 60 # convert seconds in minutes
         print '''Atencion:
-        Si cierra esta ventana o presiona Control + C
-        el apagado automatico se cancelara.
+        No cierre esta ventana o presiona Control + C
+        o el apagado automatico se cancelara.
 	A continuacion se le pedira ingresar su clave sudo
         Presione Enter(intro) para continuar...'''
         raw_input()
@@ -90,11 +90,11 @@ while flag == 0:
         exit()        
     elif opcion == 'M' or opcion == 'm':
         t = input('Ingrese los minutos: ')
-        #verifico que sea entero
+        # check if t is integer.
         if isinstance( t, (int, long) ) == True:
             
-            #convierto los minutos a segundos
-            t = int(t) * 60 #pase la variable t a integer
+            #convert t to seconds
+            t = int(t) * 60 
             apagar(t)
         else:
             limpiar()
@@ -103,9 +103,9 @@ while flag == 0:
             limpiar()
     elif opcion == 'H' or opcion == 'h':
         t = input('Ingrese las horas: ')
-        #verifico que sea entero
+        # check if t is integer.
         if isinstance( t, (int, long) ) == True:
-            #convierto las horas en minutos y luego en segundos
+            # convert hours to seconds.
             t = int(t) * 60 * 60
             apagar(t)
         else:
@@ -115,9 +115,9 @@ while flag == 0:
             limpiar()
     elif opcion == 'D' or opcion == 'd':
         t = input('Ingrese los dias: ')
-        #verifico que sea entero
+        # check if t is integer.
         if isinstance( t, (int, long) ) == True:
-            #convierto los dias en horas, las hs en minutos y luego en segundos
+            # convert days to seconds
             t = int(t) * 24 * 60 * 60
             apagar(t)
         else:
